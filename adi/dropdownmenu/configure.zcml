@@ -22,4 +22,4 @@
       file="adi_dropdown.css"
      />
 
-</configure>
+     <include package=".browser" /></configure>

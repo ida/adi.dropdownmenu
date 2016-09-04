@@ -6,6 +6,31 @@
 
 */
 
+/*
+ *
+ * ALL SCREEN SIZES
+ *
+ */
+/* No icons please: */
+.icons-on #portlets-in-header .contenttype-folder {
+    background-image: none;
+}
+
+/* All children-lists of first list: */
+#portlets-in-header .portletNavigationTree .navTreeLevel0  ul {
+    display: none;
+/*
+*/
+}
+
+
+/*
+ *
+ * DESKTOP
+ *
+ */
+@media (min-width: 600px) {
+
 /* reset public.css */
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
     border-bottom: none;
@@ -85,7 +110,7 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
     display: block;
 }
 
-/* level 2 list */
+/* level 2+ list */
 
 #portlets-in-header .portletNavigationTree .navTreeLevel0  ul {
     display: none;
@@ -138,11 +163,6 @@ dl.portlet ul.navTreeLevel0 > .navTreeItem {
     -moz-border-radius-bottomright: 9px;
 }
 
-/* no icons please */
-.icons-on #portlets-in-header .contenttype-folder {
-    background-image: none;
-}
-
 /* we don't want the  portlet-header */
 #portlets-in-header .portletNavigationTree .portletHeader {
     display: none;
@@ -170,3 +190,5 @@ html[xmlns] #portlets-in-header .portletNavigationTree .navTreeLevel0  {
 * html #portlets-in-header .portletNavigationTree .navTreeLevel0  {
     height: 1%;
 }
+
+} /* EO @media (min-width: 600px) */
