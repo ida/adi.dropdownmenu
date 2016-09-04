@@ -4,7 +4,7 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Also add button in menu-head for toggling entire menu, for small screens.
 
 
 0.6 (2016-09-04)
