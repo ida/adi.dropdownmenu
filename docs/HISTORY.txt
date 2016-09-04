@@ -4,13 +4,16 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Note: Version '0.5' seems to have been a brown-bag-release, it
+doesn't get pulled of PyPI when running buildout. We ignore version
+'0.5' and continue with '0.6'.
 
 
 0.4 (2012-02-01)
 -------------------
 
 - really hide globalnav (forgot config in last release) [ida]
+
 
 0.3 (2012-01-29)
 -------------------
