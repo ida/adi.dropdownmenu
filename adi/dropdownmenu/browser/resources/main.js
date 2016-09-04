@@ -1,3 +1,12 @@
+function addMainmenuButton() {
+  $('<a href="#" alt="Open submenu" class="submenuButton closeSubmenu">V</a>')
+  .insertBefore(
+    $('#portlets-in-header .portletNavigationTree .portletHeader a'))
+  .css('float', 'right')
+  .click(function(eve) {
+    handleMainmenuButtonClick(eve)
+  });
+}
 function addSubmenuButtons() {
 // If a list has child-lists, add a button for dropdown-click.
   // For each list:
@@ -24,10 +33,28 @@ function handleScreenSizes(maxWidth) {
     makeMainMenuDesktopFriendly()
   }
 }
+function handleMainmenuButtonClick(eve) {
+  eve.preventDefault()
+  switchMenuButtonClasses($(eve.target))
+  $(eve.target).parent().find('~ dd').toggle()
+}
 function handleSubmenuButtonClick(eve) {
 // Toggle submenu-visibility and submenu-class.
   eve.preventDefault()
-  var button = $(eve.target)
+  switchMenuButtonClasses($(eve.target))
+  $(eve.target).find('~ ul').toggle()
+}
+function makeMainMenuMobileFriendly() {
+  addMainmenuButton()
+  addSubmenuButtons()
+}
+function makeMainMenuDesktopFriendly() {
+  removeSubmenuButtons()
+}
+function removeSubmenuButtons() {
+  $('#portlets-in-header .portletNavigationTree .submenuButton').remove()
+}
+function switchMenuButtonClasses(button) {
   if(button.hasClass('openSubmenu')) {
     button.removeClass('openSubmenu')
     button.addClass('closeSubmenu')
@@ -36,16 +63,6 @@ function handleSubmenuButtonClick(eve) {
     button.removeClass('closeSubmenu')
     button.addClass('openSubmenu')
   }
-  button.find('~ ul').toggle()
-}
-function makeMainMenuMobileFriendly() {
-  addSubmenuButtons()
-}
-function makeMainMenuDesktopFriendly() {
-  removeSubmenuButtons()
-}
-function removeSubmenuButtons() {
-  $('#portlets-in-header .portletNavigationTree .submenuButton').remove()
 }
 (function($) {
   var maxWidth = 600
