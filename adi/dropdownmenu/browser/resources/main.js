@@ -45,8 +45,7 @@ function makeMainMenuDesktopFriendly() {
   removeSubmenuButtons()
 }
 function removeSubmenuButtons() {
-  $('#portlets-in-header .portletNavigationTree submenuButton').remove()
-
+  $('#portlets-in-header .portletNavigationTree .submenuButton').remove()
 }
 (function($) {
   var maxWidth = 600
